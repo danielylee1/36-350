@@ -30,4 +30,7 @@ run_simulation = function(n_trials, n, p, cutoff)
     pval = c(p.value, model)
   }
 }
+run_simulation(100, 100, 10, 0.05)
+run_simulation(1000, 1000, 20, 0.05)
+run_simulation(10000, 10000, 50, 0.05)
 
