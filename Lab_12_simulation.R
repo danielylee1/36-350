@@ -19,3 +19,15 @@ model_select = function(covariates, responses, cutoff)
   return(pval2)
 }
 
+run_simulation = function(n_trials, n, p, cutoff) 
+{
+  pval = vector()
+  for (i in 1:n_trials) {
+    lst = generate_data(n, p)
+    covariates = lst$covariates
+    responses = lst$responses
+    model = model_select(covariates, responses, cutoff)
+    pval = c(p.value, model)
+  }
+}
+
